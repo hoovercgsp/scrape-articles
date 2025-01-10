@@ -11,11 +11,12 @@ import os
 import re
 import time
 
-# Define base URL
-base_url = "https://www.ecns.cn/news/politics"
+# Define base URL; currently all articles
+base_url = "https://www.ecns.cn/scroll"
 
 # Define the cut-off date
-cutoff_date = datetime.strptime("2025-01-01", "%Y-%m-%d")
+cutoff_date = datetime.strptime("2024-12-15", "%Y-%m-%d")
+keywords = ["Xi"]
 
 # Set up Selenium WebDriver
 options = Options()
@@ -72,7 +73,8 @@ def scrape_page(url):
 
                     # Filter by cutoff date
                     if article_date >= cutoff_date:
-                        articles_data.append({"title": title, "link": link, "date": date_text})
+                        if any(k in title for k in keywords):
+                            articles_data.append({"title": title, "link": link, "date": date_text})
                     else:
                         return articles_data  # Stop processing older articles
 
@@ -89,7 +91,9 @@ def scrape_article_content(article):
     """Scrapes content of an article and saves it as a .txt file."""
     article_url = article["link"]
     article_title = article["title"]
+    article_date = article["date"]
 
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(article_url)
 
     try:
@@ -104,11 +108,15 @@ def scrape_article_content(article):
         if content.strip():
             file_name = sanitize_filename(f"{article_title[:70].replace(' ', '_')}.txt")
             with open(os.path.join(OUTPUT_FOLDER, file_name), "w", encoding="utf-8") as file:
+                file.write(f"Title: {article_title}\n")
+                file.write(f"Date: {article_date}\n\n")
                 file.write(content)
             print(f"Saved article content: {file_name}")
 
     except Exception as e:
         print(f"Error scraping content for {article_url}: {e}")
+    finally:
+        driver.quit()
 
 # Main execution
 def main():
