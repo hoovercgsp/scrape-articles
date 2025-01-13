@@ -1,3 +1,4 @@
+import argparse
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -11,12 +12,12 @@ import os
 import re
 import time
 
-# Define base URL; currently all articles
-base_url = "https://www.ecns.cn/scroll"
+# Define base URL; currently politics-related articles
+base_url = "https://www.ecns.cn/news/politics"
 
-# Define the cut-off date
-cutoff_date = datetime.strptime("2024-12-15", "%Y-%m-%d")
-keywords = ["Xi"]
+# Define the cut-off date and keywords
+cutoff_date = datetime.strptime("2024-01-01", "%Y-%m-%d")
+keywords = []
 
 # Set up Selenium WebDriver
 options = Options()
@@ -26,11 +27,6 @@ options.add_argument("--no-sandbox")
 
 service = Service("./chromedriver-mac-arm64/chromedriver")  # Update with your chromedriver path
 driver = webdriver.Chrome(service=service, options=options)
-
-# Output folders and file
-OUTPUT_FOLDER = "scraped_articles"
-CSV_FILE = "articles.csv"
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Helper functions
 def sanitize_filename(filename):
@@ -73,10 +69,11 @@ def scrape_page(url):
 
                     # Filter by cutoff date
                     if article_date >= cutoff_date:
-                        if any(k in title for k in keywords):
-                            articles_data.append({"title": title, "link": link, "date": date_text})
+                        # if any(k in title for k in keywords): 
+                        articles_data.append({"title": title, "link": link, "date": date_text})
                     else:
-                        return articles_data  # Stop processing older articles
+                        # Stop processing older articles
+                        return articles_data  
 
                 except Exception as e:
                     print(f"Error processing article: {e}")
@@ -87,7 +84,7 @@ def scrape_page(url):
         print(f"Error scraping page {url}: {e}")
         return []
 
-def scrape_article_content(article):
+def scrape_article_content(article, output_folder):
     """Scrapes content of an article and saves it as a .txt file."""
     article_url = article["link"]
     article_title = article["title"]
@@ -107,7 +104,7 @@ def scrape_article_content(article):
 
         if content.strip():
             file_name = sanitize_filename(f"{article_title[:70].replace(' ', '_')}.txt")
-            with open(os.path.join(OUTPUT_FOLDER, file_name), "w", encoding="utf-8") as file:
+            with open(os.path.join(output_folder, file_name), "w", encoding="utf-8") as file:
                 file.write(f"Title: {article_title}\n")
                 file.write(f"Date: {article_date}\n\n")
                 file.write(content)
@@ -120,6 +117,17 @@ def scrape_article_content(article):
 
 # Main execution
 def main():
+    parser = argparse.ArgumentParser(description="Scrape articles and their content.")
+    parser.add_argument("--csv_file", type=str, default="articles.csv", help="Name of the CSV file to save article data.")
+    parser.add_argument("--output_folder", type=str, default="scraped_articles", help="Name of the folder to save article content.")
+
+    args = parser.parse_args()
+
+    csv_file = args.csv_file
+    output_folder = args.output_folder
+
+    os.makedirs(output_folder, exist_ok=True)
+
     try:
         all_articles = []
         page_number = 1
@@ -136,12 +144,12 @@ def main():
             page_number += 1
 
         # Save articles to CSV
-        save_to_csv(all_articles, CSV_FILE)
-        print(f"Saved {len(all_articles)} articles to {CSV_FILE}.")
+        save_to_csv(all_articles, csv_file)
+        print(f"Saved {len(all_articles)} articles to {csv_file}.")
 
         # Scrape content for each article
         for article in all_articles:
-            scrape_article_content(article)
+            scrape_article_content(article, output_folder)
 
     finally:
         driver.quit()
