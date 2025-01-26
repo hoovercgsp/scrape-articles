@@ -16,8 +16,10 @@ import time
 africa_base_url = "https://english.news.cn/africa/china_africa/index.htm"
 
 # Define the cut-off date and keywords
-cutoff_date = datetime.strptime("2025-01-20", "%Y-%m-%d")
+cutoff_date = datetime.strptime("2025-01-01", "%Y-%m-%d")
 keywords = []
+scraped_links = set()
+done = False
 
 # Set up Selenium WebDriver
 options = Options()
@@ -39,67 +41,97 @@ def save_to_csv(data, filename):
         writer.writeheader()
         writer.writerows(data)
 
+def click_more_button(driver):
+    """Clicks the 'More' button to load more articles, handling structure and overlap."""
+    try:
+        # Wait for the "More" button to be present and visible
+        more_button = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.ID, "more"))
+        )
+        
+        # Ensure it's in view
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", more_button)
+        time.sleep(1)  # Ensure scrolling completes
+
+        # Click the button using JavaScript
+        driver.execute_script("arguments[0].click();", more_button)
+        print("Clicked 'More' button to load more articles.")
+        
+        # Wait for new articles to be loaded in the `list-cont` container
+        WebDriverWait(driver, 10).until(
+            lambda d: len(d.find_elements(By.CSS_SELECTOR, ".list-cont > *")) > 0
+        )
+    except Exception as e:
+        print(f"Error clicking 'More' button: {e}")
+
+def wait_for_new_articles(prev_article_count):
+    """Waits for new articles to load by checking for an increase in article count."""
+    try:
+        WebDriverWait(driver, 10).until(
+            lambda d: len(d.find_elements(By.CLASS_NAME, "item")) > prev_article_count
+        )
+        print("New articles loaded.")
+    except Exception as e:
+        print(f"Error waiting for new articles: {e}")
+
 def scrape_page():
     """Scrapes the current page for articles and collects data."""
     articles_data = []
-
-    # Wait for articles to load
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_all_elements_located((By.CLASS_NAME, "item"))
-    )
-
+    
+    # Get the current number of articles
     articles = driver.find_elements(By.CLASS_NAME, "item")
+    prev_article_count = len(articles)
+
     for article in articles:
         try:
             title_element = article.find_element(By.CLASS_NAME, "tit").find_element(By.TAG_NAME, "a")
-            date_element = article.find_element(By.CLASS_NAME, "time")
-
-            title = title_element.text
             link = title_element.get_attribute("href")
-            date_text = date_element.text.strip()
+            title = title_element.text
+            
+            time_element = article.find_element(By.CLASS_NAME, "time")
+            date_text = time_element.text
+            date = datetime.strptime(date_text, "%Y-%m-%d %H:%M:%S")
 
-            # Validate date_text and try to parse
-            if date_text:
-                try:
-                    date = datetime.strptime(date_text, "%Y-%m-%d %H:%M:%S")
-                except ValueError:
-                    print(f"Date format error for article '{title}': {date_text}")
-                    continue  # Skip articles with unrecognized date formats
-            else:
-                if (len(title) > 0):
-                    print(f"No date found for article '{title}'. Skipping...")
+            if date < cutoff_date:
+                print(f"Stopping scraping: Found article with date {date} before cut-off date {cutoff_date}")
+                done = True
+                return articles_data
+
+            # Skip duplicates
+            if link in scraped_links:
                 continue
+            
+            scraped_links.add(link)  # Track the link to avoid re-scraping
+            print(f"Scraped Article: {title}")
 
-            # Filter articles by cutoff date
-            if date >= cutoff_date:
-                print(f"Scraped Article: {title}")
-                articles_data.append({
-                    "title": title,
-                    "link": link,
-                    "date": date_text
-                })
+            articles_data.append({
+                "title": title,
+                "link": link,
+                "date": date
+            })
         except Exception as e:
             print(f"Error processing article: {e}")
 
     return articles_data
 
+def scrape_all_pages(driver):
+    """Scrapes all pages by clicking 'More' and scraping new articles."""
+    all_articles = []
 
-def click_more_button():
-    """Clicks the 'More' button to load additional articles."""
-    try:
-        more_button = WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "more"))
-        )
-        more_button.click()
-        # Wait for new articles to load
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_all_elements_located((By.CLASS_NAME, "item"))
-        )
-        print("Loaded more articles...")
-        return True
-    except Exception as e:
-        print(f"No more articles to load or error clicking 'More': {e}")
-        return False
+    while True:
+        current_articles = scrape_page()
+        all_articles.extend(current_articles)
+
+        if done:
+            return all_articles
+
+        prev_article_count = len(scraped_links)
+        click_more_button(driver)  # Click the 'More' button
+        time.sleep(2)  # Give time for the page to react
+
+        wait_for_new_articles(prev_article_count)
+
+    return all_articles
 
 def scrape_article_content(article, output_folder):
     """Scrapes content of an article and saves it as a .txt file."""
@@ -144,13 +176,7 @@ def main():
 
         all_articles = []  # each article has "link", "date", and "title"
 
-        while True:
-            articles = scrape_page()
-            all_articles.extend(articles)
-
-            # Attempt to click the 'More' button to load additional articles
-            if not click_more_button():
-                break
+        all_articles = scrape_all_pages(driver)
 
         # Save articles to CSV
         save_to_csv(all_articles, csv_file)
