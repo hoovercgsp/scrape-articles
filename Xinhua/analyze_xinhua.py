@@ -1,98 +1,254 @@
 import os
-from transformers import pipeline
+import argparse
+import numpy as np
 import spacy
+import matplotlib.pyplot as plt
+import seaborn as sns
+import networkx as nx
+from collections import Counter
+from transformers import pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-import numpy as np
 from sklearn.metrics import pairwise_distances
-from tqdm import tqdm  # For progress bar visualization
-import networkx as nx
-import matplotlib.pyplot as plt
-from collections import Counter
+from tqdm import tqdm
+import torch
+import re
+import countries
 
-# Load sentiment analysis model
-sentiment_model = pipeline(
-    "sentiment-analysis",
-    model="distilbert-base-uncased-finetuned-sst-2-english",
-    revision="714eb0f"
-)
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Analyze sentiment and topics by region.")
+    parser.add_argument("--region", type=str, required=True, 
+                        choices=["europe", "africa", "asia_pacific", "north_america"],
+                        help="Region to analyze (europe, africa, asia_pacific, north_america).")
+    return parser.parse_args()
 
-# Load spaCy model
-nlp = spacy.load("en_core_web_sm")
 
-# Folder containing the articles
-folder_path = "./test_articles_europe"
+def load_models():
+    sentiment_model = pipeline(
+        "text-classification", 
+        model="j-hartmann/emotion-english-distilroberta-base",  # More nuanced emotion model
+        device = 0 if torch.cuda.is_available() else -1,
+        top_k = None
+    )
+    nlp = spacy.load("en_core_web_sm")
+    return sentiment_model, nlp
 
-# List of European countries and their derivatives
-countries = {
-    "Albania": ["Albania", "Albanian"],
-    "Andorra": ["Andorra", "Andorran"],
-    "Austria": ["Austria", "Austrian"],
-    "Belarus": ["Belarus", "Belarusian"],
-    "Belgium": ["Belgium", "Belgian"],
-    "Bosnia and Herzegovina": ["Bosnia", "Bosnian", "Herzegovina", "Herzegovinian"],
-    "China" : ["China", "Chinese", "CCP"],
-    "Bulgaria": ["Bulgaria", "Bulgarian"],
-    "Croatia": ["Croatia", "Croatian"],
-    "Cyprus": ["Cyprus", "Cypriot"],
-    "Czech Republic": ["Czech Republic", "Czechia", "Czech"],
-    "Denmark": ["Denmark", "Danish", "Dane"],
-    "Estonia": ["Estonia", "Estonian"],
-    "Finland": ["Finland", "Finnish", "Finn"],
-    "France": ["France", "French"],
-    "Germany": ["Germany", "German"],
-    "Greece": ["Greece", "Greek"],
-    "Hungary": ["Hungary", "Hungarian"],
-    "Iceland": ["Iceland", "Icelandic"],
-    "Ireland": ["Ireland", "Irish"],
-    "Italy": ["Italy", "Italian"],
-    "Latvia": ["Latvia", "Latvian"],
-    "Liechtenstein": ["Liechtenstein", "Liechtensteiner"],
-    "Lithuania": ["Lithuania", "Lithuanian"],
-    "Luxembourg": ["Luxembourg", "Luxembourgish"],
-    "Malta": ["Malta", "Maltese"],
-    "Moldova": ["Moldova", "Moldovan"],
-    "Monaco": ["Monaco", "Monégasque", "Monegasque"],
-    "Montenegro": ["Montenegro", "Montenegrin"],
-    "Netherlands": ["Netherlands", "Dutch"],
-    "North Macedonia": ["North Macedonia", "Macedonia", "Macedonian"],
-    "Norway": ["Norway", "Norwegian"],
-    "Poland": ["Poland", "Polish"],
-    "Portugal": ["Portugal", "Portuguese"],
-    "Romania": ["Romania", "Romanian"],
-    "Russia": ["Russia", "Russian"],
-    "San Marino": ["San Marino", "Sammarinese"],
-    "Serbia": ["Serbia", "Serbian"],
-    "Slovakia": ["Slovakia", "Slovak"],
-    "Slovenia": ["Slovenia", "Slovenian"],
-    "Spain": ["Spain", "Spanish"],
-    "Sweden": ["Sweden", "Swedish", "Swede"],
-    "Switzerland": ["Switzerland", "Swiss"],
-    "Turkey": ["Turkey", "Turkish"],
-    "Ukraine": ["Ukraine", "Ukrainian"],
-    "United Kingdom": ["United Kingdom", "UK", "British", "England", "Scotland", "Wales", "Northern Ireland", "English", "Scottish", "Welsh", "Irish"],
-    "Vatican City": ["Vatican City", "Vatican", "Holy See"]
-}
+def get_country_list(region):
+    country_dict = getattr(countries, f"countries_{region}", None)
+    if country_dict is None:
+        raise ValueError(f"No country list found for region: {region}")
+    return country_dict
 
-# Initialize a dictionary to store sentiment scores and counts by country
-country_sentiment = {country: {"total": 0, "POSITIVE": 0, "NEGATIVE": 0} for country in countries}
 
-# Collect all articles for topic modeling
-articles = []
+def get_articles(folder_path):
+    articles = []
+    
+    for filename in os.listdir(folder_path):
+        if filename.endswith(".txt"):
+            file_path = os.path.join(folder_path, filename)
+            with open(file_path, "r", encoding="utf-8") as file:
+                text = file.read()
+                articles.append(text)
+    
+    return articles
 
-# Initialize a co-occurrence matrix
-co_occurrence = Counter()
+def get_country_sentiment(sentiment_model, nlp, articles, countries):
+    country_sentiment = {
+        country: {"total": 0, "scores": Counter()} for country in countries
+    }
+    co_occurrence = Counter()
 
-# Loop through all .txt files in the folder
-for filename in os.listdir(folder_path):
-    if filename.endswith(".txt"):
-        file_path = os.path.join(folder_path, filename)
+    for text in articles:
+        doc = nlp(text)
+        
+        for paragraph in text.split("\n"):
+            mentioned_countries = [c for c, keywords in countries.items() if any(k in paragraph for k in keywords)]
+            for i in range(len(mentioned_countries)):
+                for j in range(i + 1, len(mentioned_countries)):
+                    co_occurrence[(mentioned_countries[i], mentioned_countries[j])] += 1
+        
+        for sentence in doc.sents:
+            for country, keywords in countries.items():
+                if any(k in sentence.text for k in keywords):
+                    result = sentiment_model(sentence.text)
 
-        # Read the article content
-        with open(file_path, "r", encoding="utf-8") as file:
-            text = file.read()
-            articles.append(text)
+                    if result and isinstance(result, list) and isinstance(result[0], list):
+                        result = result[0]  # Extract the inner list
 
+                    top_emotion = max(result, key=lambda x: x["score"])  # Now it should work
+                    country_sentiment[country]["scores"][top_emotion["label"]] += 1
+                    country_sentiment[country]["total"] += 1
+
+    return country_sentiment
+
+def display_sentiment_results(country_sentiment):
+    print("Sentiment Analysis by Country:")
+    
+    countries = list(country_sentiment.keys())
+    top_sentiments = {}
+    
+    for country, data in country_sentiment.items():
+        total = data["total"]
+        if total > 0:
+            sorted_emotions = sorted(data["scores"].items(), key=lambda x: x[1], reverse=True)
+            top_sentiments[country] = sorted_emotions[:3]
+            top_emotions = ", ".join([f"{k} ({v})" for k, v in sorted_emotions[:3]])
+            print(f"{country}: {total} mentions | Top emotions: {top_emotions}")
+    
+    # Unique sentiment labels across all countries
+    all_sentiments = set()
+    for sentiments in top_sentiments.values():
+        for sentiment, _ in sentiments:
+            all_sentiments.add(sentiment)
+    all_sentiments = sorted(all_sentiments)
+
+    # Generate a color palette for the sentiments
+    color_palette = sns.color_palette("tab10", len(all_sentiments))
+    sentiment_colors = {sentiment: color_palette[i] for i, sentiment in enumerate(all_sentiments)}
+    
+    # Prepare data for stacked bar plot
+    country_labels = sorted(top_sentiments.keys())  # Ensure consistent order
+    sentiment_values = {sentiment: [0] * len(country_labels) for sentiment in all_sentiments}
+    
+    for country_idx, country in enumerate(country_labels):
+        for sentiment, count in top_sentiments.get(country, []):
+            sentiment_values[sentiment][country_idx] = count  # Fill the correct index
+
+    # Stacked Bar Chart
+    fig, ax = plt.subplots(figsize=(12, 7))
+    bottom = np.zeros(len(country_labels))
+
+    for sentiment in all_sentiments:
+        values = sentiment_values[sentiment]
+        ax.bar(country_labels, values, label=sentiment, color=sentiment_colors[sentiment], bottom=bottom)
+        bottom += np.array(values)  # Stack the bars
+
+    ax.set_xlabel("Countries")
+    ax.set_ylabel("Sentiment Mentions")
+    ax.set_title("Sentiment Analysis by Country (Top 3 Sentiments per Country)")
+    ax.legend(title="Sentiments", bbox_to_anchor=(1.05, 1), loc='upper left')
+
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+def plot_sentiment_histogram(country_sentiment):
+    top_countries = sorted(country_sentiment.items(), key=lambda x: x[1]["total"], reverse=True)[:15]
+    countries_list = [item[0] for item in top_countries]
+    emotions_list = [max(item[1]["scores"].items(), key=lambda x: x[1], default=("None", 0))[0] for item in top_countries]
+    
+    plt.figure(figsize=(12, 8))
+    x = np.arange(len(countries_list))
+    plt.bar(x, [item[1]["total"] for item in top_countries], color='blue')
+    for i, (total, emotion) in enumerate(zip([item[1]["total"] for item in top_countries], emotions_list)):
+        plt.text(i, total + 1, f"{countries_list[i]}\n{emotion} ({total})", ha='center', fontsize=9)
+    
+    plt.xlabel("Countries")
+    plt.ylabel("Count of Mentions")
+    plt.title("Top 15 Countries by Most Frequent Emotion")
+    plt.xticks(x, countries_list, rotation=45, ha="right")
+    plt.tight_layout()
+    plt.show()
+
+def preprocess_articles(articles, countries):
+    """ Remove country names and demonyms from articles, preserving punctuation. """
+    country_words = set(word.lower() for country in countries.values() for word in country)
+    
+    def clean_article(article):
+        return " ".join(
+            word for word in re.findall(r"\b\w+\b", article) if word.lower() not in country_words
+        )
+    
+    return [clean_article(article) for article in articles]
+
+def topic_modeling(articles, countries):
+    articles = preprocess_articles(articles, countries)  # Remove country names
+    vectorizer = CountVectorizer(stop_words="english", max_df=0.95, min_df=2)
+    X = vectorizer.fit_transform(articles)
+    terms = vectorizer.get_feature_names_out()
+    
+    def calculate_coherence(lda_model):
+        topics = lda_model.components_
+        coherence = sum(pairwise_distances(X[:, topic.argsort()[-10:]].toarray(), metric="cosine").mean()
+                        for topic in topics)
+        return -coherence
+    
+    best_n_topics, best_coherence = 2, float("-inf")
+    for n in tqdm(range(2, 11)):
+        lda = LatentDirichletAllocation(n_components=n, random_state=42).fit(X)
+        coherence_score = calculate_coherence(lda)
+        if coherence_score > best_coherence:
+            best_coherence, best_n_topics = coherence_score, n
+    
+    lda = LatentDirichletAllocation(n_components=best_n_topics, random_state=42).fit(X)
+    topics = [[terms[i] for i in topic.argsort()[-10:] if terms[i] not in countries] for topic in lda.components_]
+
+    # Get topic distributions for each article
+    topic_distributions = lda.transform(X)
+
+    # Count number of articles assigned to each topic
+    topic_counts = np.bincount(np.argmax(topic_distributions, axis=1), minlength=len(topics))
+
+    # Plot article counts instead of word counts
+    plt.figure(figsize=(10, 6))
+    plt.bar([f"Topic {i}" for i in range(len(topics))], topic_counts, color="lightcoral")
+    plt.xlabel("Topics")
+    plt.ylabel("Number of Articles")
+    plt.title("Number of Articles per Topic")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+    
+    return topics, lda, X
+
+def associate_articles_topics(countries, articles, lda, X, topics):
+    print("\nBuilding Country-Topic Matrix...")
+    countries_list = list(countries.keys())
+    country_topic_matrix = []
+    topic_distributions = lda.transform(X)
+
+    for topic_idx in range(len(topics)):
+        print(f"Processing Topic {topic_idx}: {', '.join(topics[topic_idx])}")
+        country_associations = {country: 0 for country in countries_list}
+
+        for article_idx, article_topic_probs in enumerate(topic_distributions):
+            assigned_topic = np.argmax(article_topic_probs)
+            if assigned_topic == topic_idx:
+                article_text = articles[article_idx]
+                for country, keywords in countries.items():
+                    if any(keyword.lower() in article_text.lower() for keyword in keywords):
+                        country_associations[country] += 1
+
+        country_topic_matrix.append([country_associations[country] for country in countries_list])
+
+    return country_topic_matrix
+
+def visualize_articles_topics(country_topic_matrix, countries, topics):
+    countries_list = list(countries.keys())
+    country_topic_array = np.array(country_topic_matrix)
+    plt.figure(figsize=(12, 8))
+    sns.heatmap(
+        country_topic_array.T, 
+        annot=True,
+        fmt="d",
+        cmap="coolwarm",
+        xticklabels=[f"Topic {i}" for i in range(len(topics))],
+        yticklabels=countries_list,
+        cbar_kws={"label": "Number of Articles"}
+    )
+    plt.title("Country-Topic Associations Heatmap")
+    plt.xlabel("Topics")
+    plt.ylabel("Countries")
+    plt.tight_layout()
+    plt.show()
+
+def get_country_cooccurrence(countries, articles, nlp):
+    # Initialize a co-occurrence matrix
+    co_occurrence = Counter()
+
+    countries["China"] = ["China", "Chinese", "CCP"]
+
+    for text in articles:
         # Process the text with spaCy to extract sentences
         doc = nlp(text)
         for paragraph in text.split("\n"):
@@ -106,181 +262,97 @@ for filename in os.listdir(folder_path):
                 for j in range(i + 1, len(mentioned_countries)):
                     co_occurrence[(mentioned_countries[i], mentioned_countries[j])] += 1
 
-        for sentence in doc.sents:
-            sentence_text = sentence.text
+    return co_occurrence
 
-            # Check if any country or its derivatives are mentioned in the sentence
-            for country, keywords in countries.items():
-                if any(keyword in sentence_text for keyword in keywords):
-                    # Perform sentiment analysis on the sentence
-                    result = sentiment_model(sentence_text)
-                    label = result[0]["label"]
+def visualize_country_cooccurrence(co_occurrence):
+    # Visualize country co-occurrence as a graph
+    print("\nVisualizing Country Co-occurrence...")
+    G = nx.Graph()
 
-                    # Update sentiment scores and counts for the country
-                    if label == "POSITIVE":
-                        country_sentiment[country]["POSITIVE"] += 1
-                    else:
-                        country_sentiment[country]["NEGATIVE"] += 1
-                    country_sentiment[country]["total"] += 1
+    for (country1, country2), count in co_occurrence.items():
+        if count > 0:  # Only include co-occurrences with at least one mention
+            G.add_edge(country1, country2, weight=count)
 
-# Calculate sentiment percentages and display the results
-print("Sentiment Analysis by Country:")
-for country, scores in country_sentiment.items():
-    total = scores.get("total", 0)
-    if total > 0:
-        positive_pct = (scores.get("POSITIVE", 0) / total) * 100
-        print(f"{country}: {total} mentions ({positive_pct:.2f}% positive)")
-    else:
-        print(f"{country}: No mentions")
+    pos = nx.spring_layout(G, seed=42)
+    plt.figure(figsize=(12, 8))
 
-# Filter only countries with mentions and calculate sentiment counts
-sentiment_data = {
-    country: (
-        scores.get("total", 0), 
-        scores.get("POSITIVE", 0), 
-        scores.get("NEGATIVE", 0),
-        (scores.get("POSITIVE", 0) / scores.get("total", 1)) * 100  # Positive percentage
-    )
-    for country, scores in country_sentiment.items()
-    if scores.get("total", 0) > 0
-}
+    # Draw nodes and edges with edge thickness representing weight
+    nx.draw_networkx_nodes(G, pos, node_size=700, node_color="lightblue")
+    edges = G.edges(data=True)
+    nx.draw_networkx_edges(G, pos, width=2, alpha=0.6, edge_color="gray")
+    nx.draw_networkx_labels(G, pos, font_size=10, font_color="black")
 
-# Sort by total mentions and get the top 15 countries
-sorted_data = sorted(sentiment_data.items(), key=lambda x: x[1][0], reverse=True)[:15]
+    # Add edge labels for weights
+    edge_labels = {(u, v): f"{data['weight']}" for u, v, data in edges}
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8)
 
-# Unpack filtered data
-countries_list, total_mentions, positive_counts, negative_counts, positive_pcts = zip(*[
-    (country, data[0], data[1], data[2], data[3]) for country, data in sorted_data
-])
+    plt.title("Country Co-occurrence Graph")
+    plt.show()
 
-# Plot the histogram
-x = np.arange(len(countries_list))  # the label locations
-width = 0.8  # bar width
+def cross_continent_sentiment_analysis(sentiment_model, nlp, base_folder):
+    """Compare sentiment trends across different continents."""
+    regions = ["europe", "africa", "asia_pacific", "north_america"]
+    continent_sentiments = {}
 
-plt.figure(figsize=(12, 8))
-plt.bar(x, positive_counts, width, label='Positive Mentions', color='green')
-plt.bar(x, negative_counts, width, bottom=positive_counts, label='Negative Mentions', color='red')
+    for region in regions:
+        print(f"\nProcessing {region}...")
+        articles = get_articles(os.path.join(base_folder, f"test_articles_{region}"))
+        countries = get_country_list(region)
+        country_sentiments = get_country_sentiment(sentiment_model, nlp, articles, countries)
+        
+        # Aggregate sentiment scores for the region
+        region_sentiment = Counter()
+        total_mentions = 0
 
-# Add country names with positive percentage above each bar
-for i, (total, pct) in enumerate(zip(total_mentions, positive_pcts)):
-    plt.text(i, total + 1, f"{countries_list[i]}\n({total}, {pct:.1f}%)", ha='center', fontsize=9)
+        for country_data in country_sentiments.values():
+            region_sentiment.update(country_data["scores"])
+            total_mentions += country_data["total"]
 
-plt.xlabel("Countries")
-plt.ylabel("Count of Mentions")
-plt.title("Top 15 Countries by Sentiment Mentions")
-plt.xticks(x, countries_list, rotation=45, ha="right")
-plt.legend()
-plt.tight_layout()
-plt.show()
+        continent_sentiments[region] = {
+            "total_mentions": total_mentions,
+            "sentiment_scores": region_sentiment
+        }
 
-# Topic Modeling with LDA
-print("\nPerforming Topic Modeling...")
-# Preprocessing articles
-vectorizer = CountVectorizer(stop_words="english", max_df=0.95, min_df=2)
-X = vectorizer.fit_transform(articles)
+    # Visualization
+    plt.figure(figsize=(10, 6))
+    for region, data in continent_sentiments.items():
+        sentiments, counts = zip(*data["sentiment_scores"].most_common(5))  # Top 5 sentiments
+        plt.bar(sentiments, counts, label=region, alpha=0.7)
 
-# Function to calculate the coherence score for LDA
-def calculate_coherence_score(lda_model, vectorized_data, terms, top_n_words=10):
-    topics = lda_model.components_
-    coherence = 0
-    for topic_idx, topic in enumerate(topics):
-        top_words_idx = topic.argsort()[-top_n_words:]
-        top_words = [terms[i] for i in top_words_idx]
-        # Calculate pairwise distances for the top words
-        distances = pairwise_distances(
-            vectorized_data[:, top_words_idx].toarray(), metric="cosine"
-        )
-        coherence += distances.mean()
-    return -coherence  # Return as negative since lower is better
+    plt.xlabel("Sentiments")
+    plt.ylabel("Mentions")
+    plt.title("Cross-Continent Sentiment Comparison")
+    plt.legend()
+    plt.show()
 
-# Determine the optimal number of topics
-print("\nFinding the optimal number of topics...")
-min_topics = 2
-max_topics = 10
-best_n_topics = min_topics
-best_coherence = float("-inf")
+def main():
+    args = parse_arguments()
+    region = args.region
 
-terms = vectorizer.get_feature_names_out()
+    folder_path = f"./articles_{region}"
+    countries = get_country_list(region)
+    sentiment_model, nlp = load_models()
+    
+    articles = get_articles(folder_path)
 
-for n_topics in tqdm(range(min_topics, max_topics + 1)):
-    lda = LatentDirichletAllocation(n_components=n_topics, random_state=42)
-    lda.fit(X)
-    coherence_score = calculate_coherence_score(lda, X, terms)
-    print(f"Number of Topics: {n_topics}, Coherence Score: {coherence_score:.4f}")
-    if coherence_score > best_coherence:
-        best_coherence = coherence_score
-        best_n_topics = n_topics
+    # Sentiment Analysis
+    country_sentiment = get_country_sentiment(sentiment_model, nlp, articles, countries)  
+    display_sentiment_results(country_sentiment)
+    plot_sentiment_histogram(country_sentiment)
 
-print(f"\nOptimal number of topics: {best_n_topics} (Coherence Score: {best_coherence:.4f})")
+    # Topic Modeling
+    topics, lda, X = topic_modeling(articles, countries)
+    print("\nTopics discovered:")
+    for idx, topic in enumerate(topics):
+        print(f"Topic {idx}: {', '.join(topic)}")
 
-# Run LDA with the optimal number of topics
-lda = LatentDirichletAllocation(n_components=best_n_topics, random_state=42)
-lda.fit(X)
+    # Articles by topic
+    country_topic_matrix = associate_articles_topics(countries, articles, lda, X, topics)
+    visualize_articles_topics(country_topic_matrix, countries, topics)
 
-# Display topics
-print("\nTopics discovered:")
-topics = []
-for idx, topic in enumerate(lda.components_):
-    top_terms = [terms[i] for i in topic.argsort()[-10:]]
-    topics.append(top_terms)
-    print(f"Topic {idx}: {', '.join(top_terms)}")
+    # Country co-occurrence
+    co_occurrence = get_country_cooccurrence(countries, articles, nlp)
+    visualize_country_cooccurrence(co_occurrence)
 
-# Visualize topics
-plt.figure(figsize=(10, 6))
-topic_labels = [f"Topic {i}" for i in range(len(topics))]
-word_counts = [np.sum(topic) for topic in lda.components_]
-plt.bar(topic_labels, word_counts, color="lightcoral")
-plt.xlabel("Topics")
-plt.ylabel("Word Counts")
-plt.title("Word Counts by Topic")
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.show()
-
-# Associate topics with countries
-print("\nAssociating Topics with Countries...")
-printed_articles = set()
-for idx, topic in enumerate(topics):
-    print(f"Topic {idx}: {', '.join(topic)}")
-    country_associations = {}
-
-    for article in articles:
-        if article in printed_articles:
-            continue
-
-        doc = nlp(article)
-        for country, keywords in countries.items():
-            if any(keyword in article for keyword in keywords):
-                if country not in country_associations:
-                    country_associations[country] = 0
-                country_associations[country] += 1
-        printed_articles.add(article)
-
-    # Display country associations for the topic
-    print("Associated Countries:")
-    for country, count in sorted(country_associations.items(), key=lambda x: x[1], reverse=True):
-        print(f"  {country}: {count} articles")
-
-# Visualize country co-occurrence as a graph
-print("\nVisualizing Country Co-occurrence...")
-G = nx.Graph()
-
-for (country1, country2), count in co_occurrence.items():
-    if count > 0:  # Only include co-occurrences with at least one mention
-        G.add_edge(country1, country2, weight=count)
-
-pos = nx.spring_layout(G, seed=42)
-plt.figure(figsize=(12, 8))
-
-# Draw nodes and edges with edge thickness representing weight
-nx.draw_networkx_nodes(G, pos, node_size=700, node_color="lightblue")
-edges = G.edges(data=True)
-nx.draw_networkx_edges(G, pos, width=2, alpha=0.6, edge_color="gray") # [data["weight"] for _, _, data in edges]
-nx.draw_networkx_labels(G, pos, font_size=10, font_color="black")
-
-# Add edge labels for weights
-edge_labels = {(u, v): f"{data['weight']}" for u, v, data in edges}
-nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8)
-
-plt.title("Country Co-occurrence Graph")
-plt.show()
+if __name__ == "__main__":
+    main()

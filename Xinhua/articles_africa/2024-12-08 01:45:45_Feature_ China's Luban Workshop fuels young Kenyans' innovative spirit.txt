@@ -1,0 +1,24 @@
+by Ronald Njoroge, Li Hualing
+NAIROBI, Dec. 7 (Xinhua) -- Dickson Esamai is busy working on his agricultural innovation with his teammates at the Luban Workshop at Machakos University, about 65 km southeast of Nairobi, the Kenyan capital.
+The fifth-year student, who is pursuing a bachelor's degree in electrical and electronics engineering, is developing a device that seeks to help farmers improve their output.
+"We are building a tool that guides farmers to determine the right crop to cultivate on their land based on the nutrients present," Esamai said in an interview with Xinhua.
+The hand-held device has sensors that measure soil moisture to help farmers get the right amount of water for their crops, thereby conserving water.
+To expand its use among smallholder farmers who don't have smartphones, the device can also send text messages to feature phones with information critical to farming.
+The device was designed and programmed from scratch thanks to the advanced tools available at the Luban Workshop, Esamai said.
+In addition, the innovation benefits greatly from the huge data storage capabilities of the Huawei cloud that the Luban Workshop utilizes.
+Esamai and his seven team members are among the 600 students who have benefited from advanced Chinese technology since the Luban Workshop was established in 2019 at Machakos University.
+China has set up 17 Luban Workshops in 15 African countries as part of its international vocational education cooperation drive within the frameworks of the Belt and Road Initiative and the Forum on China-Africa Cooperation.
+Kenya now has two Luban Workshops. The other one is hosted by Meru University of Science and Technology, about 280 km northwest of Nairobi.
+On Dec. 5, Machakos University and China's Tianjin City Vocational College signed a three-year agreement to enhance the role of the Luban Workshop, which was named after an ancient Chinese craftsman.
+Under the pact, the two parties will expand enrollment at the Luban Workshop to boost digital skills in Kenya.
+Erick Omuya, a lecturer of computer science at Machakos University, said the presence of Luban Workshops is a game changer in Kenya's tertiary institutions teaching engineering courses, because of their emphasis on hands-on skills for both trainers and tutors.
+Omuya noted that the Luban Workshops have modern equipment that has facilitated students' access to practical training on emerging technologies such as cloud computing and AI.
+Mark Omaiko, a fourth-year student in a bachelor's degree program in cloud computing and information security, is another beneficiary of the Luban Workshop. He is working on a cloud-integrated safari system that leverages AI to help tourists choose which wildlife sites in Kenya to visit, from their mobile devices.
+Omaiko, 21, said that advanced equipment at Luban Workshop helped him develop a mobile interface that even wildlife enthusiasts not tech-savvy could easily navigate to decide on sites to visit.
+Lyu Jingquan, the main initiator of the Luban Workshop brand, said the workshop is ideal for African countries because it ensures that students have practical skills for the job market.
+At a conference on Luban Workshops at Machakos University, Lyu said the workshops will deploy a teaching model that uses actual engineering projects to impart skills to students so that they can solve real problems in society.
+Joyce Ngure, assistant director of research in Kenya's Ministry of Education, said the establishment of the Luban Workshops is a pillar of Kenya-China cooperation in talent training, poverty alleviation and job creation.
+Michael Mugambi, a computer science student at Machakos University, credits the Luban Workshop for igniting his interest in developing a hotspot billing system that seeks to expand access to high-speed internet for low-income households.
+The 22-year-old Mugambi partnered with three of his colleagues to develop an electronic device that can purchase internet access in bulk and then share Wi-Fi in public spaces, using a pay-as-you-use revenue model at affordable rates.
+Ian Omwenga Ombaki, another student at Luban Workshop, said the workshop provides a platform for him to develop an innovative system automating hydroponics, a technique of growing plants using a water-based nutrient solution rather than soil.
+He hopes to use his product to encourage urban residents to engage in farming to fulfill food needs at the household level, said the 22-year-old Ombaki. ■
