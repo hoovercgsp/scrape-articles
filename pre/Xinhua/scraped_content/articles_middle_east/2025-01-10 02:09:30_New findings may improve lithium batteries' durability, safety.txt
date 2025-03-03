@@ -1,0 +1,11 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-10 02:09:30
+JERUSALEM, Jan. 9 (Xinhua) -- Israeli researchers have made new findings that are expected to make rechargeable lithium-ion batteries safer and more efficient, Weizmann Institute of Science (WIS) said in a statement on Thursday.
+The current lithium-ion batteries are prone to dendrite formation during charging, microscopic crystal structures that can short-circuit the battery and cause fires.
+The WIS team used a method combining nuclear magnetic resonance (NMR) spectroscopy with dynamic nuclear polarization to track dendrite growth and study the interactions within the battery's electrolyte.
+According to the results published in the journal Nature Communications, a "golden ratio" of 40 percent ceramic in solid electrolytes can minimize dendrite formation and extend battery lifespan.
+More than 40 percent ceramic causes structural and performance issues, while less than 40 percent reduces battery life, added the researchers.
+To study what blocks the growth of the dendrite, the researchers focused on the solid electrolyte interphase (SEI) layer, a thin layer that forms when the dendrites react with the electrolyte.
+They enhanced NMR signals using dynamic nuclear polarization, which allowed them to identify its chemical composition and the interactions between the lithium and the electrolyte's various structures.
+WIS said the findings could lead to stronger, safer, and more efficient batteries that store more energy and last longer without increasing size, holding the potential to improve energy storage in various devices, from mobile phones to electric vehicles, while lowering environmental and economic costs. ■

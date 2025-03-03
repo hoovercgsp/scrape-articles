@@ -1,0 +1,31 @@
+Source: Xinhua
+Editor: huaxia
+2024-08-15 20:58:00
+BEIJING, Aug. 15 (Xinhua) -- The just-concluded Paris Olympic Games was a source of joyful moments for audiences across the globe. For more than half a month, a lot of people worked around the clock to ensure that the event went smoothly. These people included numerous experts who were safeguarding cyberspace.
+Recalling the Beijing Olympic and Paralympic Winter Games held in 2022, Zhang Zhuo, vice president of the Qi-Anxin Group, said the company, a leading Chinese cybersecurity firm, had organized a team of about 3,500 employees to ward off cyberthreats.
+After years of meticulous preparation, China presented a streamlined, safe and splendid 2022 Winter Games that wowed audiences worldwide. As an official sponsor of the games, Qi-Anxin, which provided official cybersecurity services and antivirus software, proudly placed Olympic mascots, namely an adorable panda Bing Dwen Dwen, and a festive and auspicious Shuey Rhon Rhon, in its lobby.
+In between these two mascots is a crouching yellow "tiger," which is the logo of the firm. "It is inspired by tiger tallies," said a Qi-Anxin employee, referring to an ancient token used by the king to command his army.
+Such tallies date back to the Warring States Period (475-221 BC), with some having inscriptions on them. They were usually separated into two parts and a command to mobilize troops would only be obeyed when one part matched the other.
+"The tiger tally symbolizes a method to ensure security and works as a token of trust between the king and the general," said Zhang, adding that gaining trust and providing cybersecurity solutions to clients are the key tenets of Qi-Anxin.
+As a technological firm, Qi-Anxin has been brave in innovation since its founding 10 years ago. Notably, AI technologies represented by ChatGPT and large language models have been emerging rapidly since 2022, leading to explosive growth in AI applications with capabilities and effects that have stunned the world.
+Qi-Anxin moved swiftly to seize this opportunity, setting up an AI related team with a focus on breakthroughs in this arena. Drawing on its cybersecurity defense experience and vast, high-quality security data, Qi-Anxin last year developed China's first industrial-grade large-model security AI product named QAX-GPT Security Robot.
+At a cybersecurity-themed expo held in September 2023 in Fuzhou, the capital city of east China's Fujian Province, the robot attracted many visitors.
+The robot is equivalent to "hiring a team of more than 60 security experts who can work around the clock to fend off potential risks," said a Qi-Anxin employee at the expo, which formed part of the 2023 China Cybersecurity Week.
+In March 2024, a new version of the security robot was released across various industries. Thanks to its impact, the average investigation response time for security incidents has been reduced from hours to minutes, while the processing time for individual threat incidents has decreased by about 98 percent, according to a press release posted on the website of the company.
+In another major move, Qi-Anxin in April 2024 launched a knowledge Q&A service experience center based on the QAX-GPT Security Large Model, providing professional knowledge and decision support for cybersecurity professionals.
+In pushing innovation, speed is everything, Zhang said.
+For Wan Renguo, a security expert with Qi-Anxin, the security robot proved a superb assistant. Having worked in the cybersecurity field for more than a decade, Wan is a staunch advocate of AI-powered solutions such as the security robot.
+According to Wan, the procedure for handling an alert used to take a long time, but now an initial report on some alerts can be completed in minutes.
+"Our work has become much more effective," Wan said. "The false alarm rate has also been greatly reduced."
+Zhang believes Qi-Anxin's innovations are in line with the country's endeavor to foster new quality productive forces that are characterized by high technology, high performance and high quality.
+He said that demand in the market for solutions provided by Qi-Anxin and other cybersecurity providers will increase.
+Modernizing national security systems and capacity is highlighted in the resolution on further deepening reform comprehensively to advance Chinese modernization, which was adopted at the third plenary session of the 20th Central Committee of the Communist Party of China in July.
+The key document describes national security as a pivotal foundation for ensuring steady and sustained progress in Chinese modernization, stressing the need to strengthen the cybersecurity system and improve the policy and governance systems for promoting the development of strategic industries, such as next-generation information technology and artificial intelligence.
+Since its advent, the internet has delivered unprecedented convenience to human society, but it is also a source of attacks and threats.
+Nowadays, cybersecurity remains a global challenge and poses a severe threat to China, which has taken an array of measures to tackle the issue, including setting up the Cyberspace Administration of China.
+Since 2012, a comprehensive internet governance system has been basically formed, and the capacity and system for safeguarding cybersecurity has been improving in China.
+In strengthening cybersecurity, China advocates peace, security, openness and cooperation, and is committed to working with the international community to jointly build a community with a shared future in cyberspace.
+Chinese digital enterprises like Qi-Anxin are sharing their technologies with countries and regions of the Global South, providing them with services and technical support.
+"It's impossible for any individual, enterprise or country to achieve cybersecurity with its own power, as collaboration is needed even to track an attacker," Qi Xiangdong, chairman of Qi-Anxin, once said.
+In carrying out the cybersecurity mission for the Beijing Winter Olympics and Paralympics, Qi-Anxin set a world record in terms of Winter Olympics cybersecurity by achieving "zero incidents."
+"Practice has proven that, as a security provider, we have achieved good results to ensure our clients' safety," Zhang said. ■

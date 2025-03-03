@@ -1,0 +1,11 @@
+Source: Xinhua
+Editor: huaxia
+2025-02-09 23:04:00
+JERUSALEM, Feb. 9 (Xinhua) -- The researchers have exposed the brain mechanisms involved in recognizing the emotional states of others, with potential implications for treating social disorders such as autism, the Israeli University of Haifa (UH) said in a statement on Sunday.
+The study, published in Current Biology, highlighted the role of the brain's medial prefrontal cortex (mPFC) in emotional recognition and behavior.
+Recognizing emotions is crucial for empathy, allowing people to relate and respond appropriately to others. For individuals on the autism spectrum, the ability is often impaired, making social interactions difficult.
+To understand the underlying neural mechanisms, the researchers used mice. Employing advanced techniques such as genetic manipulations and real-time neural measurements, the team explored how neurons in the prelimbic part of the mPFC respond to emotional states in other mice and found that these neurons reacted differently to stressed and calm mice.
+The mice showed a preference for being near stressed mice, indicating a response based on emotional state, but when neural activity in the mPFC was disrupted, the mice lost their ability to distinguish between emotional states.
+This suggests that the neural activity in the mPFC plays a critical role in recognizing emotions and influencing social behavior, such as whether to approach or avoid others based on their emotional state.
+The researchers believe that dysfunctional neural activity in this area could help explain emotional recognition and social behavior difficulties, like those seen in autism.
+The next step is to study mice with autism-related genetic mutations to explore how changes in neural activity affect their behavior, according to the statement. ■

@@ -1,0 +1,11 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-08 01:59:30
+JERUSALEM, Jan. 7 (Xinhua) -- Israeli researchers developed a new framework designed to accurately label genomic data, which was a major challenge in biological research, the Hebrew University of Jerusalem (HU) said in a statement on Tuesday.
+Genomic datasets often include samples that are labeled incorrectly or unclearly.
+To address this issue, the team used artificial neural networks (ANNs) in a new way, as described in the journal Nature Computational Science.
+Instead of just using the ANNs to make predictions, they focused on understanding which samples were harder for the networks to label correctly.
+By studying the difficulty of labeling, the researchers found errors in cell annotations and improved the interpretation of biological data.
+HU noted that this approach helps uncover key biological pathways related to development and disease and highlights a new way to handle single-cell and spatial omics data, which have revolutionized the ability to study cells in health and disease.
+It added that the tool also provides a better way to analyze data from single cells and has great potential for advancing biological research.
+In the long term, it could also improve how diseases are diagnosed and treated, according to the team. ■

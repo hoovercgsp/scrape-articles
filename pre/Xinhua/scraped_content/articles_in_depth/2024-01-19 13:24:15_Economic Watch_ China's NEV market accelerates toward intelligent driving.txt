@@ -1,0 +1,37 @@
+Source: Xinhua
+Editor: huaxia
+2024-01-19 13:24:15
+BEIJING, Jan. 19 (Xinhua) -- China's new energy vehicle (NEV) manufacturers have achieved massive commercial success globally and they are now on a new frontier where electric cars are vying to become more intelligent.
+This momentum is driven by the country's tech firms specializing in artificial intelligence and smart hardware as they're striving to reshape the landscape of the NEV market.
+SMART COCKPIT
+Chinese smartphone maker Xiaomi unveiled its first NEV model SU7 last year, and it is expected to enter the market this year.
+During the launch ceremony, the CEO of the tech firm exhibited SU7's intelligent elements, which include the Zoom Bird's Eye View, large-scale road modeling, and a navigation autopilot system slated to cover 100 Chinese cities by the end of 2024.
+This was immediately after Huawei launched its second electric vehicle Aito M9. The six-seater SUV features a futuristic smart cockpit running on Harmony OS, Huawei's self-developed operating system that serves devices in an Internet of Things era.
+M9's electric version is priced at above 500,000 yuan (about 70,000 U.S. dollars) while the battery-electric minivan developed by Li Auto is expected to cost buyers the same.
+A growing number of electric vehicle manufacturers in China have departed from the low-price strategy that was once adopted by domestic carmakers. Instead, they have found success primarily through emphasizing the selling points of an intelligent driving experience, which has resulted in substantial order volumes.
+China's auto sector is embracing a vibrant culture of innovation in the realm of intelligent driving, with the continuous advent of new technologies.
+Numerous innovation-driven enterprises, including internet giants rather than traditional auto parts suppliers, have disrupted the market with their rapid upgrades.
+These new players in the auto sector have made full use of China's large territory, complex natural environments and diversifying road conditions to test their smart tech in a comprehensive and reliable way.
+The AR-HUD tech that combines augmented reality (AR) and head-up display (HUD) to project traffic and navigation information on the windshield is emerging as a standard configuration in newly launched NEVs.
+More than 1.4 million vehicles in China have been equipped with AR-HUD as of September 2023, according to Gasgoo, an auto industry think tank.
+The increasing applications of AR-HUD have injected new momentum into supply chains of their core components like curved mirrors, polarizing optical devices and automotive-grade image source chips of liquid crystal on silicon.
+SELF-DRIVING ERA
+At the 2024 Consumer Electronics Show (CES), which concluded on Jan. 12 in the U.S. city of Las Vegas, five out of 35 laser radar (or Lidar) manufacturers that took part in the exhibition came from China.
+Shanghai-based startup HESAI Technology and Shenzhen-based RoboSense, respectively, released ultra-long-range Lidar capable of achieving 300-meter standard range measurement.
+A total of 36 Chinese automakers have adopted Lidar as of the third quarter of 2023 and as many as 106 Lidar-equipped models, or about 90 percent of the world's total, are expected to be launched in China, according to statistics from Yole Group, a semiconductor industry consultancy.
+At the Shanghai International Auto Show held in April 2023, 44 of the 271 NEV models on display were equipped with Lidar.
+The rapid growth of Lidar is driven by the surge in demand for L2 and higher-level intelligent driving. L2 stands for partial automation in a six-level system of driving automation. The thriving Lidar market indicates the arrival of a self-driving era in China.
+Last March, China approved the commercial operation of autonomous driving services, allowing Baidu and Pony.ai to provide fully driverless rides without a safety supervisor aboard in a 60-square-kilometer area of the Beijing Economic-Technological Development Area.
+By the end of 2023, over 30 cities including Beijing, Shanghai and Guangzhou have issued road test licenses for autonomous driving.
+In November last year, Chinese authorities greenlighted the pilot work of intelligent cars with L3 and L4 driving, which stand for conditional automation and high automation respectively. In December, the Chinese startup IM Motors obtained the high-speed highway L3 test license in Shanghai.
+EXPANDING INFRASTRUCTURE
+The rapidly growing intelligent NEV market is a result of the country's steady investment in tech infrastructure.
+A 56-kilometer smart expressway has started operation as a test section near Suzhou in east China's Jiangsu Province. A section of this smart expressway, spanning 6.5 km, was designed for self-driving vehicles of L4 automation.
+As of August 2023, more than 20,000 kilometers of test roads for autonomous driving have been opened nationwide.
+Information and communication infrastructure including the 5G network, high-precision maps, and Internet of Vehicles platforms are lending vital technical support for the rise of intelligent vehicles.
+China has built 3.28 million 5G base stations by the end of November 2023, accounting for 28.5 percent of the country's total mobile base stations, according to the Ministry of Industry and Information Technology.
+National high-precision maps supported by China's Beidou satellite navigation system have been developed, offering accurate positioning and navigation capabilities for autonomous driving.
+At the 2022 Beijing Winter Olympics, a fleet of L4 driverless cars, powered by Beidou and 5G tech, was demonstrated at the Shougang Park in suburban Beijing for autonomous driving, automatic parking and centimeter-level positioning.
+To date, China has established at least seven national-level pilot zones for the Internet of Vehicles, a network where data flows seamlessly to connect vehicles, roads, cloud networks and people, according to Sun Zhengliang, head of the Ministry of Public Security's Traffic Management Research Institute.
+"Going intelligent is the second phase of the ongoing automotive revolution," said Zhang Yongwei, secretary general of China EV100, a NEV industry think tank.
+Without this approach, maintaining the first-mover advantage in the NEV industry becomes challenging, so car manufacturers must quickly join the trend to stay ahead, Zhang added. ■

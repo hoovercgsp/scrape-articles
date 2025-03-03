@@ -1,0 +1,10 @@
+Source: Xinhua
+Editor: huaxia
+2025-02-14 00:28:30
+JERUSALEM, Feb. 13 (Xinhua) -- Israeli and German researchers have discovered unique properties of four-dimensional (4D) crystals, the Israel Institute of Technology (Technion) said Thursday.
+The study, published in the journal Science, was conducted by creating a special wave pattern on a quasiperiodic surface with advanced techniques such as near-field scanning optical microscopy, said Technion in a statement.
+Quasiperiodic crystals, ordered but not periodic, were first discovered by Technion researcher Dan Shechtman in 1982, which earned him the Nobel Prize in Chemistry in 2011.
+Over the years, scientists found that quasiperiodic crystals exist in higher dimensions beyond the conventional three. This higher-dimensional structure determines their mechanical and topological properties.
+The new study showed that despite differences in appearance, two quasiperiodic patterns shared the same topological properties, distinguishable only through their higher-dimensional structure.
+It also showed that two surface wave patterns appear identical when measured in attoseconds, which can be explained by the balance between the crystal's topological and energetic properties. An attosecond is a very short period of time and is equal to one quintillionth of a second
+The researchers said their findings may help scientists better understand quasiperiodic crystals and lead to new applications in quantum computing and data transmission. ■

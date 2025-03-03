@@ -1,0 +1,22 @@
+Source: Xinhua
+Editor: huaxia
+2024-08-13 21:01:15
+BEIJING, Aug. 13 (Xinhua) -- On the desolate surface of the moon, a shimmering spacecraft with a long robotic arm appears dazzling against the backdrop of the black sky, while the faint line of a rut is visible on the lunar soil.
+When the China National Space Administration released this picture after China's Chang'e-6 probe collected the first samples from the far side of the moon in June, it went viral across Chinese social media platforms, arousing people's curiosity as to how the photo was taken. Chinese space engineers recently revealed the "secret photographer."
+The "photographer" is not a person, but an autonomous, intelligent mini robot weighing less than five kilograms that was attached to the lander of the Chang'e-6 during the mission's journey to the moon, according to the China Aerospace Science and Technology Corporation (CASC), its developer.
+After Chang'e-6 collected its lunar samples, the mini robot autonomously detached from the lander, moved to a suitable position, selected an ideal angle for the photograph, and then captured the image.
+As the world's first autonomous intelligent robot to land on the far side of the moon, it is highly capable and has significantly enhanced autonomous intelligence despite its compact size, according to the CASC.
+Equipped with artificial intelligence technologies based on neural networks, the robot can think and judge like a human, said Xing Yan, a researcher with the CASC. It can accomplish many tasks that are not possible with traditional methods, such as adjusting the camera angle, she said.
+Traditional lunar photography missions require meticulous calculations to determine the relative distance, position and ideal timing for capturing images. However, on the Chang'e-6 mission, the robot did not need exact computations. Instead, it autonomously assessed and refined its approach based on the quality of the images it captured, thereby ensuring the optimal visual outcome.
+To accumulate the necessary experience, it requires extensive learning in autonomous intelligence development. The researchers prepared a variety of lights to help the robot learn and adapt to the unique lighting conditions on the far side of the moon, where the light source is singular and the backdrop is the inky expanse of space, said Huang Huang, another researcher of the CASC.
+She still remembers her online shopping spree, purchasing a variety of lights such as fishing lamps, camping lamps, stage lights, all in an effort to broaden the mini robot's exposure to diverse lighting conditions.
+The researchers developed a feature model of the environment based on the lights. By immersing the robot in this setting, they facilitated its learning process, ultimately achieving intelligent photographic decision-making.
+Besides having a clever mind, the mini robot also boasts a robust "physique" to cope with the complex environment on the far side of the moon.
+In contrast to the moon's near side, which is relatively flat, the far side features a more complex terrain, characterized by more mountains, deep valleys and craters.
+Researchers conducted numerous simulation experiments with the mini robot working on special types of terrain.
+The research team had to repeatedly adjust the structure and technical details of the mini robot to meet the requirements for the Chang'e-6 mission. At times, the relentless string of setbacks cast doubt on their design principles, Xing said.
+"However, no matter how challenging, exhausting or stressful the situation was, we managed to calm ourselves down and address the issues first," she said.
+Despite its great technological complexity, the mini robot is cost-effective to produce. As the technology matures, the potential applications for the future are diverse.
+It can be reconfigured into a variety of forms, such as a floor-sweeping robot, a household assistant, a companion robot and an educational robot. It is also capable of performing inspections in confined spaces like narrow caves or pipelines, Xing said.
+As deep-space exploration targets extend further and further away, autonomous intelligence will become a key technology in China's deep-space exploration endeavors, said Li Yong with the CASC.
+For many deep-space missions, current telemetry and control technologies fall short of coverage. The uncertainty of the terrain to be explored dictates that many activities must be independently carried out by the probe itself, he said. ■

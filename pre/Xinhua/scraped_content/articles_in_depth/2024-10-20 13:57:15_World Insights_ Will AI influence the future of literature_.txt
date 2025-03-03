@@ -1,0 +1,28 @@
+Source: Xinhua
+Editor: huaxia
+2024-10-20 13:57:15
+FRANKFURT, Oct. 20 (Xinhua) -- Imagine a world where your reading experience is personalized. Envision an assistant who remembers the books you read and analyzes your preferences and emotional reactions, acting like a personal writer who creates unique stories just for you.
+Every page you turn feels like a conversation with an old friend who understands you perfectly.
+As this once-unthinkable scenario approaches reality with the rapid advancements in AI, will you feel scared, excited, or simply enjoy the experience?
+The buzz surrounding AI's transformative potential is palpable at this year's Frankfurt Book Fair, where publishers, authors, and tech enthusiasts are eager to explore its impact on the literary world.
+WINNER OR LOSER?
+"It doesn't matter how young or old we are; AI will be something we talk about for the rest of our lives," Jeremy North, managing director for books publishing at Taylor & Francis, told Xinhua. "The real question is: will we be AI winners or AI losers? To be AI winners, we need to be willing to take risks and experiment, even if we don't yet have all the answers."
+Niels Peter Thomas, managing director for books at Springer Nature, shared with Xinhua that AI, supported by appropriate human oversight, has the potential to accelerate discovery.
+"Springer Nature has been using AI for over 10 years. We've published several machine-generated books," he said, adding that the company recently published an academic book using generative AI. "It took less than five months from inception to publication -- about half the usual time."
+Thomas urged collaboration among publishers, authors, and stakeholders to explore AI's potential and limitations.
+Claudia Roth, Germany's Minister of State for Culture and the Media, said at a panel discussion that AI has made remarkable strides over the years.
+"It has become a powerful tool, delivering huge efficiency and speed, along with impressive results. But is it just a tool, or a broomstick that no magic spell can stop?" she said.
+MACHINE BIAS OR HUMAN BIAS?
+Thomas highlighted the inherent biases in human decision-making, noting that prejudices, knowledge gaps, hidden agendas, and political beliefs all affect objectivity.
+He said that in the early stages of AI development, it was hoped that machines, free from human subjectivity, would eliminate these biases. "But probably we are replacing human biases with machine biases because the way the machine is programmed ultimately was done by a person with beliefs."
+Icelandic author Halldor Gudmundsson emphasized that AI operates on likelihood and makes decisions based on probability. "However, this means that sometimes it lies. Instead of checking facts, it invents them, leading to misinformation," he said.
+Henning Lobin, scientific director of the Leibniz Institute for the German Language, said that AI models, like ChatGPT, rely on vast datasets without clear regulatory measures, raising significant copyright and security concerns.
+Claudia Kaiser, vice president of the Frankfurt Book Fair, told Xinhua that AI's effects on the industry, workforce, and various businesses are still unfolding. "Huge changes are coming, but no one really knows what it will mean for the industry."
+She added that a pressing concern is copyright issues -- who owns the rights to AI-generated content? "Everyone is trying to understand what AI will mean for publishing and what kind of regulations are needed for AI to grow without causing too much harm to the industry."
+SUPERVISION AND TRANSPARENCY
+"AI is a tool, and like any tool, it always requires supervision and correction -- we always need a human in the loop," Thomas said. "Humans must take responsibility because the concept of responsibility is something that cannot easily be replaced by artificial intelligence."
+He emphasized the importance of transparency, saying that their publishing company has decided that whenever they use AI, it will be clearly marked. "If we publish a book that's been translated by a machine, we will label it as such."
+The expert stressed the need to have clear purposes for using AI. "We should only use technology when we have a clear purpose for doing so," he said. "Even if it doesn't cause harm, if we don't have a good reason, we shouldn't use it."
+For Jeremy North, setting new industry standards is crucial. "No single publisher or media company will have all the answers," he said. "New suppliers will emerge with software or technology, and we can't figure this out individually. Publishers need to share insights and learn from each other."
+North expressed optimism that "a new set of standards and protocols will emerge" to help the industry manage AI effectively and fairly. "This will allow us to continue competing as publishers while providing value for authors and readers, ensuring that publishing continues to do good work."
+"We should be mindful of the downsides, and that shouldn't stop us from experimenting and being optimistic about the good things that AI can bring," he said. ■

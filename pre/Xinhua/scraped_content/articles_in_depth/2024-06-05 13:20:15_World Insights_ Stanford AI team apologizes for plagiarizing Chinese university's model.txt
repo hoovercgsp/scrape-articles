@@ -1,0 +1,19 @@
+Source: Xinhua
+Editor: huaxia
+2024-06-05 13:20:15
+SAN FRANCISCO, June 4 (Xinhua) -- "'Fake it before you make it' is an ignoble product of Silicon Valley," said Christopher Manning, director of the Artificial Intelligence Laboratory at Stanford University, commenting on some researchers at the university who plagiarized the achievements by institutions such as China's Tsinghua University.
+On May 29, a research team at Stanford University released a large model called Llama3-V, claiming it can achieve the same effects as large models such as GPT-4V with a pre-training cost of only 500 U.S. dollars. The news was widely spread on social media and in the academic community of artificial intelligence.
+However, industry insiders soon suspected that the Standford team plagiarized the MiniCPM-Llama3-V 2.5 large model released by Tsinghua University and other Chinese institutions.
+Both Llama3-V and the MiniCPM-Llama3-V 2.5 large model are based on the open-source Llama3 large model. Still, the team in Tsinghua conducted unique training, including using the "Tsinghua Bamboo Slips," a collection of Chinese texts written on strips of bamboo which date back to the Warring States Period (475-221 B.C.), to train the model to recognize ancient Chinese characters.
+Tests show that the model released by the Stanford University team can also recognize the "Tsinghua Bamboo Slips."
+"We are quite sure that the Stanford team has plagiarized our big model research results," Liu Zhiyuan, a tenured associate professor of the Department of Computer Science at Tsinghua University, told Xinhua.
+"The data we scanned and annotated word by word from the 'Tsinghua Bamboo Slips' has never been made public, and Llama3-V has shown the same ability to identify the 'Tsinghua Bamboo Slips', even the error examples are the same," said Liu, who is also a member of the Tsinghua big model team.
+As doubt accumulated, the Stanford team deleted the database and promotion articles on the Internet, Liu said, adding "from the evidence and their reactions, the nature of plagiarism has been relatively confirmed."
+Following Manning's criticism, two members of the Stanford team, Aksh Garg and Siddharth Sharma, formally apologized on social media.
+"We've taken all references to Llama3-V down and we apologize once again for the inconvenience we may have caused," they said.
+Amid the current AI boom, this incident has aroused widespread attention. It shows that although the United States is leading in AI technologies overall, it is far from omnipotent.
+The Silicon Valley where Stanford University is located is considered to be the center of innovation in the United States. While having nurtured many advanced technologies, it has also cultivated a negative culture including the "fake it till you make it" ethos.
+For example, Elizabeth Holmes, who dropped out of Stanford University to start a business, boasted that she had a disruptive technology that could draw finger blood to test diseases like cancers. She was regarded as a female Steve Jobs but was later found to have fooled everyone and was sentenced to imprisonment for fraud.
+When Google's artificial intelligence model Gemini Pro was asked in Chinese who it was, it would answer that it was "Ernie Bot", a Chinese big model developed by Baidu. Industry insiders believe that the reason may be that Google "referenced" the relevant data of the large model "Ernie Bot" when training its large model.
+"China's AI research has an increasing influence," Liu said, noting the plagiarism incident reflects that "our innovative achievements are attracting international attention."
+Overall, there is still a significant gap between China's research level and the world's top level, but in some specific segments such as AI innovation, China has rapidly grown into an important promoter, he added. ■

@@ -1,0 +1,11 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-07 03:54:00
+JERUSALEM, Jan. 6 (Xinhua) -- A study by an international research team has found further evidence suggesting a possible connection between the Herpes Simplex Virus-1 (HSV-1) and Alzheimer's disease, the Hebrew University of Jerusalem (HU) announced on Monday.
+The study identified 19 HSV-1-related proteins in the brains of Alzheimer's patients, spanning all stages of the disease. This finding strengthens growing evidence pointing to infections, such as HSV-1, as a potential factor in the development and progression of Alzheimer's.
+Dr. Or Shemesh of HU, the corresponding author of the study published in Cell Reports, said the team used advanced techniques to detect increased activity of a herpesvirus protein called ICP27. This protein's activity was particularly pronounced as the disease advanced.
+Notably, the ICP27 protein was found in the same regions as tau -- a brain protein that becomes toxic in Alzheimer's -- but was absent near amyloid plaques, another hallmark of the disease. This indicates that HSV-1 may directly impact tau, contributing to Alzheimer's-related changes.
+Using human brain organoids derived from stem cells, researchers demonstrated that HSV-1 infection can trigger specific modifications to tau linked to Alzheimer's. Initially, these modifications appeared to protect brain cells by reducing the virus's presence and preventing cell death. However, as the disease progressed, these same changes likely contributed to brain damage.
+The study also highlighted the brain's immune response as a factor in Alzheimer's pathology, focusing on the cGAS-STING pathway, which influences tau changes.
+"Our research shows how HSV-1 interacts with the brain and impacts Alzheimer's pathologies," Dr. Shemesh said. "Early in the disease, tau modifications may protect brain cells by limiting the virus. But over time, these changes can harm the brain and accelerate neurodegeneration."
+The findings provide new insights into how infections and the brain's immune system may influence Alzheimer's disease. Researchers suggest that targeting viral activity or modulating the immune response could pave the way for new treatments, according to the HU statement. ■

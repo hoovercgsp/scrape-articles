@@ -1,0 +1,32 @@
+Source: Xinhua
+Editor: huaxia
+2024-02-07 16:09:30
+BEIJING, Feb. 7 (Xinhua) -- The Global Forum on the Ethics of Artificial Intelligence (AI) 2024, under the patronage of the United Nations Educational, Scientific and Cultural Organization (UNESCO), was held on Monday and Tuesday, addressing crucial themes such as equality and diversity in the rapidly advancing field of digital technology.
+In the past year, countries worldwide have been actively engaged in AI development tailored for local languages, reflecting their profound considerations in the domain of digital sovereignty.
+EMERGENCE OF DIVERSE AI MODELS
+In late 2022, the release of the English generative AI ChatGPT by the U.S.-based company OpenAI sparked a global trend in developing generative AI models for local languages.
+Notably, in China, models like Baidu's ERNIE Bot and iFlytek's Xinghuo have undergone rapid iterations, showcasing impressive Chinese language-processing capabilities and serving as productivity tools for many businesses.
+"China has made rapid progress in relevant research, with some cross-domain large models achieving breakthroughs, and the development trend of large models for vertical domains is also very promising," Chen Xiaoping, chairman of the AI Ethics Committee of the Chinese Artificial Intelligence Association, told Xinhua.
+The generative AI landscape is also thriving in Europe. In France, by September of the previous year, 79 startups were already specializing in the field. Notably, Mistral, an AI company valued at almost 2 billion euros (around 2.15 billion U.S. dollars), stands out for introducing the versatile "Mixtral8x7B" model proficient in French, Spanish, Italian, English, and German.
+In Russia, YandexGPT said it outperformed ChatGPT 3.5 in Russian language responses and has passed the Russian Unified State Exam.
+Simultaneously, countries like Japan, South Korea, Vietnam, and Singapore are actively participating in the development of generative AI models tailored to their respective languages.
+BUILDING SOVEREIGN AI CAPABILITIES
+This global trend not only underscores the dynamic evolution of generative AI across diverse linguistic landscapes, but also highlights the growing significance of "sovereign AI" worldwide.
+"Sovereign AI" is a frequently mentioned concept in the wake of the popularity of generative AI. It generally refers to a country's support for AI infrastructure development, training large models with data that align with the country's culture and thinking, and fostering a local ecosystem for AI products.
+People and countries now recognize that they have to utilize their own data, keep their own data, process that data, and develop their own AI, said Nvidia Corp chief executive Jensen Huang.
+Last year, French Finance Minister Bruno Le Maire publicly stated that France and Europe at large must develop their own generative AI. He pledged to increase the funds raised to invest in tech innovation.
+Similar concerns have been voiced by various countries, including India.
+"We are determined that we must have our own sovereign AI," Rajeev Chandrasekhar, Indian minister of state for electronics and information technology, said recently.
+"People realize that they can't afford to export their country's knowledge, their country's culture for somebody else to then resell AI back to them," Huang said.
+Such words underscore a significant challenge in developing sovereign AI globally.
+Currently, American enterprises dominate the field of AI, and for other countries to keep pace, they must adopt American products, and such dependence could potentially constrain their subsequent development.
+Against this backdrop, data analysis experts caution that the predominant use of English in building AI language models, coupled with most suppliers originating from the United States, may result in a heavy reliance on American providers, leading to a lack of full independence in many AI technologies.
+TACKLING POTENTIAL DIGITAL DIVIDE
+The global development of generative AI is uneven, potentially leading to new inequalities.
+UN Secretary-General Antonio Guterres said at the World Economic Forum Annual Meeting earlier this year: "We need a systematic effort to increase access to AI so that developing economies can benefit from its enormous potential. We need to bridge the digital divide instead of deepening it."
+Chen pointed out that for the new problems arising in the era of AI, it is necessary to pursue a unity of economic and social benefits while maintaining high-quality development, to effectively ensure and improve the well-being of society and mankind as a whole.
+In this process, China has shown good momentum in the field of AI.
+Ronnie Lins, director of the China-Brazil Center for Research and Business, told reporters in April last year that Brazil's AI development is not yet sufficient, while China and the United States have invested heavily in AI.
+AI could have an impact on jobs globally, Lins noted, expecting China to leverage its strengths and contribute to creating new opportunities for young people through the application of new technologies.
+The Global Forum on the Ethics of AI 2024 addressed the aforementioned issues. In the current landscape of diverse language AI developments, Gabriela Ramos, assistant director-general for the Social and Human Sciences of UNESCO, emphasized the need for global cooperation.
+"We need true global coordination and knowledge-sharing to build a responsible AI ecosystem that benefits everyone," said Ramos. ■

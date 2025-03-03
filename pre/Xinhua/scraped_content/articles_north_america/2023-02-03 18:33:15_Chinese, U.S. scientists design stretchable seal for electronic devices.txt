@@ -1,0 +1,6 @@
+SHANGHAI, Feb. 3 (Xinhua) -- An international group led by Chinese scientists has developed a kind of stretchable seal to better protect next-generation flexible electronic devices.
+The study published in the journal Science on Friday details the liquid metal-based, soft, hermetic and wireless-communicable seals for stretchable systems.
+The advancement in human-machine interfaces and other soft electronic technologies has raised demand for protective packaging for stretchable devices. Furthermore, conventional stretchable materials are often highly permeable and less hermetically sealed.
+The researchers from Shanghai Jiao Tong University and North Carolina State University used a liquid metal called eutectic gallium indium with both low gas permeability and fluidic properties. They then tested the seals in a stretchable battery and a soft heat transfer device that incorporates volatile fluids.
+The capacity retention of the battery was about 72.5 percent after 500 cycles, and the sealed heat transfer system showed an increased thermal conductivity while strained and heated.
+They also demonstrated that the hermetic seals can be designed to enable wireless communication with a signal transmission window. ■

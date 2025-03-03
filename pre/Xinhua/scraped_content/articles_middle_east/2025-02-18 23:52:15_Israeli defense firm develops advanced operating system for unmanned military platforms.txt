@@ -1,0 +1,8 @@
+Source: Xinhua
+Editor: huaxia
+2025-02-18 23:52:15
+JERUSALEM, Feb. 18 (Xinhua) -- Israeli defense electronics company Elbit Systems has developed an advanced operating system to manage unmanned military platforms, according to a statement by the company on Tuesday.
+The system, Dominion-X, is capable of planning and controlling robotic platforms across various domains, said the company.
+It was designed to enhance the operational power of unmanned aerial systems and unmanned ground vehicles, enabling them to dominate all terrain and simplifying the deployment and maintenance of large fleets of unmanned systems.
+The system integrates with command, control, communications, and intelligence subsystems and provides counter-drone infrastructure. It can adapt to different platforms and payloads, allowing for more complex, coordinated, and intelligent behaviors, said the statement.
+In addition to offering situational awareness and terrain control, the system can function without GPS and handle various tasks, such as automatic target recognition and precise target guidance, it added. ■

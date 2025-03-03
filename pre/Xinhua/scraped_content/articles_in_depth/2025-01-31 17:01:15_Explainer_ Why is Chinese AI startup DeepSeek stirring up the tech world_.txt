@@ -1,0 +1,35 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-31 17:01:15
+BEIJING, Jan. 31 (Xinhua) -- The artificial intelligence (AI) community is abuzz with excitement over DeepSeek-R1, a new open-source model developed by Chinese startup DeepSeek.
+Released on Jan. 20, it quickly soared to the top of Apple's app store's free charts by Monday, surpassing OpenAI's ChatGPT.
+According to DeepSeek, in tasks such as mathematics, coding and natural language reasoning, the performance of this model is comparable to the leading models from heavyweights like OpenAI, but only at a fraction of the cash and computing power of its competitors.
+Here's what DeepSeek has done and why it is taking the AI industry by surprise.
+WHAT IS DEEPSEEK?
+Officially known as DeepSeek Artificial Intelligence Fundamental Technology Research Co., Ltd., the firm was founded in July 2023. As an innovative technology startup, DeepSeek is dedicated to developing cutting-edge large language models (LLMs) and related technologies.
+Since its first model "DeepSeek LLM" released in January last year, the company has undergone multiple rounds of iteration. In December, the startup launched its open-source LLM "V3," which overtook all of Meta's open-source LLMs and rivaled OpenAI's closed-source GPT4-o, according to U.S. media reports.
+The just-released model R1 has achieved an important technological breakthrough -- using pure deep learning methods to allow AI to spontaneously emerge with reasoning capabilities.
+Unlike traditional approaches like Chain-of-Thought (CoT) and Supervised Fine-Tuning (SFT), DeepSeek has distinguished itself in the AI industry by adopting Reinforcement Learning (RL) as a core training method.
+While CoT and SFT rely on step-by-step reasoning and huge amounts of labeled data, respectively, RL enables models to learn through interaction and reward mechanisms, making it better suited for complex and dynamic tasks.
+The adoption of RL has allowed DeepSeek to enhance its models' reasoning, adaptability and efficiency, setting it apart as a frontrunner in the field.
+When queried about the meaning of "DeepSeek," its latest R1 chatbot replied, "The name reflects the company's mission to deeply explore and advance the foundational technologies of AI, aiming to push the boundaries of AI innovation and application."
+"BIGGER IS NO LONGER ALWAYS SMARTER"
+According to its V3 model technical report, DeepSeek's manufacturing cost is approximately 5.57 million U.S. dollars, making it the least expensive among LLMs.
+Renowned U.S. economist Jeffrey Sachs, a professor and director of the Center for Sustainable Development at Columbia University, told Xinhua that the breakthrough made by DeepSeek shows the possibility of advanced AI at much lower costs than was widely believed in the United States.
+DeepSeek-V3 makes it "look easy today with an open weights release of a frontier-grade LLM trained on a joke of a budget (2,048 GPUs for 2 months, $6M)," posted Andrej Karpathy, a founding member of OpenAI, on X.
+Compared to other well-known models, DeepSeek achieved an order-of-magnitude reduction of cost.
+The cost is "a stark contrast to the hundreds of millions, if not billions, that U.S. companies typically invest in similar technologies," said Marc Andreessen, a prominent tech investor, depicting DeepSeek's R1 as "one of the most amazing breakthroughs" he had ever seen.
+The AI industry development has long relied on piling up computing power. The cost-efficient DeepSeek model may upend the AI landscape.
+Praising the DeepSeek-V3 Technical Report as "very nice and detailed," Karpathy said that the report is worthy of reading through.
+U.S. investment bank and financial service provider Morgan Stanley believed that DeepSeek demonstrates an alternative path to efficient model training than the current arm's race among hyperscalers by significantly increasing the data quality and improving the model architecture.
+"Bigger is no longer always smarter," it said.
+OPEN-SOURCE MODEL
+"To see the DeepSeek new model, it's super impressive in terms of both how they have really effectively done an open-source model that does this inference-time compute, and is super-compute efficient," said Microsoft CEO Satya Nadella.
+Open source allows researchers, developers and users to access the model's underlying code and its "weights" -- the parameters that determine how the model processes information -- enabling them to use, modify or enhance the model to suit their needs.
+DeepSeek has greatly benefited from open-source principles and, in turn, demonstrates a strong commitment to sharing knowledge and contributing to the collective advancement of technology.
+Meta's chief AI scientist Yann LeCun said: "They came up with new ideas and built them on top of other people's work. Because their work is published and open source, everyone can profit from it."
+"That is the power of open research and open source," LeCun added.
+Echoing LeCun, Sachs, the U.S. economist, said, "DeepSeek's business and development model is open source, which is a compelling and successful model for science, technology and business."
+While OpenAI initially started as an open-source organization but later shifted to a closed-source model, DeepSeek has taken a different path.
+Highlighting the importance of fostering collaboration and innovation through open-source principles, Liang Wenfeng, the founder of DeepSeek, said that building a robust technological ecosystem is the priority.
+"We won't choose closed-source," Liang said. ■

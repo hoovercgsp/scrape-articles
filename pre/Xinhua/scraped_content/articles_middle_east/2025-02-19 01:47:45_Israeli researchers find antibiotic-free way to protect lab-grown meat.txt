@@ -1,0 +1,9 @@
+Source: Xinhua
+Editor: huaxia
+2025-02-19 01:47:45
+JERUSALEM, Feb. 18 (Xinhua) -- Israeli researchers have discovered a new way to prevent bacterial contamination in lab-grown meat without antibiotics, the Hebrew University of Jerusalem said Tuesday.
+Antimicrobial peptides, a class of small peptides widely existing in nature, are an important part of the innate immune system of different organisms. They have inhibitory effects against bacteria, fungi, parasites, and viruses.
+The new study, published in Food Chemistry: Molecular Sciences, found that antimicrobial peptides mixtures (RPMs) can effectively kill harmful bacteria like Listeria and E. coli while preserving the cells needed to grow cultured meat.
+Lab-grown meat, seen as a sustainable alternative to traditional farming, is challenged by bacterial infections. While antibiotics are commonly used, they risk promoting drug-resistant bacteria and leaving harmful residues in the final product.
+According to the study, RPMs, which break down quickly during digestion, offer a safer solution. They show low bacterial resistance, no damage to meat-producing cells, and no risk of bioaccumulation or adverse health effects.
+The researchers said RPMs can be a promising tool for improving food safety and consumer trust in cultured meat products. They are now working to integrate RPMs into industrial processes and regulatory frameworks for commercial production. ■

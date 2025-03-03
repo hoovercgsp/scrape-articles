@@ -1,0 +1,12 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-23 03:04:15
+JERUSALEM, Jan. 22 (Xinhua) -- Israeli scientists have discovered a unique genetic mechanism that provides human cells with efficient protection against viruses, the Israel Institute of Technology (Technion) said in a statement on Wednesday.
+According to the Technion, the findings, published in Nature Communications, could lead to new therapeutic strategies.
+In their study on the immune system's response to viral infections, the researchers focused on the interaction between two molecules, NORAD and STAT3, which are key players in genetic processes.
+NORAD is a unique RNA molecule that plays vital roles in genetic regulation, cell differentiation, and embryonic development, while STAT3 is a protein essential for controlling transcription and embryonic development.
+The researchers discovered that in a healthy state, the interaction between NORAD and STAT3 prevents the immune system from producing a virus-targeted response, but when a viral attack happens, the cell responds by cutting and digesting NORAD molecules.
+The lack of NORAD suppresses STAT3 activity, thereby releasing the brakes on the immune system and triggering a rapid and efficient response that halts infection and neutralizes the virus's ability to replicate within the human cell.
+The researchers also showed that although both molecules are highly ancient in evolution, the specific mechanism discovered is unique to humans and closely related primates. They speculated that this mechanism evolved in response to viruses that learned to manipulate infected cells to prevent immune responses.
+They noted that the mechanism bypasses slower, cumbersome immune mechanisms that viruses can manipulate, thus creating an immediate defense.
+The researchers believe that the findings will lead to new strategies for correcting immune system "malfunctions" and better combating viral infections. ■

@@ -1,0 +1,24 @@
+Source: Xinhua
+Editor: huaxia
+2024-09-22 15:33:45
+SACRAMENTO, the United States, Sept. 22 (Xinhua) -- The U.S. solar industry is grappling with a sharp downturn and a wave of business closures, despite the government's attempt to bolster domestic solar supply chains through financial incentives and other measures.
+This year has already seen a series of solar company bankruptcies and massive closures.
+Home security giant ADT exited the solar business in January, followed by Titan Solar shutting down in June. August witnessed the bankruptcy of SunPower, one of the nation's oldest and largest solar installers, while Lumio, another major installer, filed for bankruptcy in September.
+These business failures reflected a broader decline in residential and utility-scale solar installations, even though U.S. solar panel production capacity has increased.
+The Inflation Reduction Act (IRA), passed in 2022, allocated hundreds of billions of U.S. dollars to strengthen the clean energy economy in the country, including substantial support for solar component manufacturing.
+However, Michelle Davis, head of global solar at the energy research and consulting firm Wood Mackenzie, warned that "future solar growth is being hindered by broader power sector challenges."
+The obstacles included interconnection backlogs, shortages of electrical equipment, and constraints on labor availability, said Davis, lead author of the U.S. Solar Market Insight Q3 2024 report, released by the Solar Energy Industries Association and Wood Mackenzie this month.
+The residential solar market has been hit particularly hard, with the Wood Mackenzie report projecting a 19-percent nationwide installation decline this year.
+In the second quarter, the residential solar capacity added 1.1 GW, down 37 percent year over year, marking the lowest quarter in nearly three years, according to the report.
+Other segments of the solar industry also experienced declines in the second quarter. Commercial solar installations fell 5 percent from the first quarter, while the community solar segment logged a 12-percent decrease both quarter over quarter and year over year. The utility-scale segment recorded a 23-percent decline from the first quarter.
+The report attributed these declines to policy changes in California and high interest rates nationwide. California's transition to net billing, which reduces the rates utilities pay residents for excess power from new home solar systems, has had a significant impact. The state's residential solar installations dropped 36 percent from the first quarter, with volumes expected to fall 41 percent compared with 2023.
+California is the biggest solar market in the United States, as it accounted for over 30 percent of residential solar capacity additions in 2023. For all other states in the country, the report predicted an 8-percent decline in residential installations this year.
+The broader economic environment has also contributed to the industry's struggles. High inflation led to rising interest rates, making borrowing more expensive for solar companies whose business models often rely on upfront financing.
+While the IRA included a 30-percent tax credit for rooftop solar systems, the incentive was dampened by the Federal Reserve's (Fed) interest rate hikes, which began in March 2022.
+The Fed's decision to cut its key interest rate by half a percentage point on Wednesday, the first such cut in years, is generally seen as positive for solar companies. However, experts cautioned that rate cuts may not come as quickly or significantly as the industry hopes.
+Analysts like Pol Lezcano from BloombergNEF warned that solar installers faced challenges beyond just high interest rates.
+Expanding into new markets is particularly difficult for companies already facing financial constraints, he told tech news website CNET.
+"The bottom line, regardless of what the interest rate conversation is, this is a really difficult model to scale," said Lezcano.
+Davis also pointed to additional uncertainties facing the industry, including newly proposed tariffs and the upcoming presidential election in November, saying that "there is currently a lot to navigate in the solar industry."
+In May, the U.S. government implemented a steep increase in tariffs on imported solar cells to boost domestic manufacturing. However, this move has raised concerns among U.S.-based solar panel manufacturers who still rely on imported cells.
+The industry is worried about potential taxes on imported solar cells and modules, which could further impede solar growth in the United States. ■

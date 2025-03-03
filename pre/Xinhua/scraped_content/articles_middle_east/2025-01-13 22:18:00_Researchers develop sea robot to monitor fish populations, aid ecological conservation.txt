@@ -1,0 +1,10 @@
+Source: Xinhua
+Editor: huaxia
+2025-01-13 22:18:00
+JERUSALEM, Jan. 13 (Xinhua) -- Israeli researchers developed an innovative marine robot to monitor fish populations automatically and accurately, the University of Haifa (UH) said in a statement on Sunday.
+Overfishing can lead to the depletion of marine resources, and the lack of advanced monitoring tools in many countries exacerbates the issue. The lightweight underwater robot will assist fishermen and fisheries authorities worldwide, helping to maintain ecological balance and ensure the sustainable management of fishery resources, said the university.
+The new robotic system, operated by one person, combines effective depth control with active sonar scanning for autonomous detection and length measurement of schools and individual fish as small as 6 cm. Upon detection, the robot surfaces and reports its findings via satellite communications.
+Fishing authorities can use the measurements to monitor fishing conditions, and fishermen can fish more effectively while significantly reducing bycatch of undersized fish, species prohibited from fishing, or endangered marine animals.
+According to the statement, the robotic system is energy-efficient and can operate continuously for up to five days, and several robots can be integrated into a swarm, improving detection accuracy. The robot is expected to cost a few thousand U.S. dollars per unit.
+During tests in Lake Malawi, the robot was able to monitor unique species, including colorful 6-cm cichlid fish, which are native to the lake and serve as a major source of income in Malawi.
+Global fish stocks are under increasing threat from overfishing and from illegal, unreported and unregulated fishing. More than a third (35.4 percent) of global stocks were overfished in 2019, according to a UN report in 2022. ■
